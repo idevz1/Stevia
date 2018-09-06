@@ -21,9 +21,9 @@ class GetConstraintsTests: XCTestCase {
     }
     
     func testCanGetLeftConstraint() {
-        XCTAssertNil(v.leftConstraint)
+        XCTAssertNil(v.leftCT)
         v.left(10)
-        let c = v.leftConstraint
+        let c = v.leftCT
         XCTAssertNotNil(c)
         XCTAssertEqual(c?.constant, 10)
         XCTAssertEqual(c?.firstItem as? UIView, v)
@@ -37,9 +37,9 @@ class GetConstraintsTests: XCTestCase {
     }
     
     func testCanGetRightConstraint() {
-        XCTAssertNil(v.rightConstraint)
+        XCTAssertNil(v.rightCT)
         v.right(42)
-        let c = v.rightConstraint
+        let c = v.rightCT
         XCTAssertNotNil(c)
         XCTAssertEqual(c?.constant, -42)
         XCTAssertEqual(c?.firstItem as? UIView, v)
@@ -53,9 +53,9 @@ class GetConstraintsTests: XCTestCase {
     }
     
     func testCanGetTopConstraint() {
-        XCTAssertNil(v.topConstraint)
+        XCTAssertNil(v.topCT)
         v.top(23)
-        let c = v.topConstraint
+        let c = v.topCT
         XCTAssertNotNil(c)
         XCTAssertEqual(c?.constant, 23)
         XCTAssertEqual(c?.firstItem as? UIView, v)
@@ -69,9 +69,9 @@ class GetConstraintsTests: XCTestCase {
     }
     
     func testCanGetBottomConstraint() {
-        XCTAssertNil(v.bottomConstraint)
+        XCTAssertNil(v.bottomCT)
         v.bottom(145)
-        let c = v.bottomConstraint
+        let c = v.bottomCT
         XCTAssertNotNil(c)
         XCTAssertEqual(c?.constant, -145)
         XCTAssertEqual(c?.firstItem as? UIView, v)
@@ -85,9 +85,9 @@ class GetConstraintsTests: XCTestCase {
     }
     
     func testCanGetHeightConstraint() {
-        XCTAssertNil(v.heightConstraint)
+        XCTAssertNil(v.heightCT)
         v.height(35)
-        let c = v.heightConstraint
+        let c = v.heightCT
         XCTAssertNotNil(c)
         XCTAssertEqual(c?.constant, 35)
         XCTAssertEqual(c?.firstItem as? UIView, v)
@@ -101,9 +101,9 @@ class GetConstraintsTests: XCTestCase {
     }
     
     func testCanGetWidthConstraint() {
-        XCTAssertNil(v.widthConstraint)
+        XCTAssertNil(v.widthCT)
         v.width(51)
-        let c = v.widthConstraint
+        let c = v.widthCT
         XCTAssertNotNil(c)
         XCTAssertEqual(c?.constant, 51)
         XCTAssertEqual(c?.firstItem as? UIView, v)
@@ -117,9 +117,9 @@ class GetConstraintsTests: XCTestCase {
     }
     
     func testCanGetTrailingConstraint() {
-        XCTAssertNil(v.trailingConstraint)
+        XCTAssertNil(v.trailingCT)
         v.trailingAnchor.constraint(equalTo: spv.trailingAnchor, constant: 104).isActive = true
-        let c = v.trailingConstraint
+        let c = v.trailingCT
         XCTAssertNotNil(c)
         XCTAssertEqual(c?.constant, 104)
         XCTAssertEqual(c?.firstItem as? UIView, v)
@@ -133,9 +133,9 @@ class GetConstraintsTests: XCTestCase {
     }
     
     func testCanGetLeadingonstraint() {
-        XCTAssertNil(v.leadingConstraint)
+        XCTAssertNil(v.leadingCT)
         v.leadingAnchor.constraint(equalTo: spv.leadingAnchor, constant: 73).isActive = true
-        let c = v.leadingConstraint
+        let c = v.leadingCT
         XCTAssertNotNil(c)
         XCTAssertEqual(c?.constant, 73)
         XCTAssertEqual(c?.firstItem as? UIView, v)
